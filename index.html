@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>钟唐恒玙 · 玩家档案</title>
+    <meta name="description" content="" />
+    <meta name="theme-color" content="#0a0c09" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="avatar.jpg" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c9f24d'/%3E%3Cpath d='M21 21h22L25 43h22' stroke='%230a0c09' stroke-width='7' fill='none' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <!-- 顶栏 -->
+    <header class="site-header" id="siteHeader">
+      <div class="nav-inner">
+        <a href="#top" class="brand" id="brand"></a>
+
+        <nav class="nav-links" id="navLinks" aria-label="主导航"></nav>
+
+        <div class="nav-tools">
+          <button class="tool-btn lang-btn" id="langToggle" type="button">EN</button>
+          <button class="tool-btn icon-btn" id="themeToggle" type="button" aria-label="切换主题">
+            <span class="icon-sun" aria-hidden="true"></span>
+            <span class="icon-moon" aria-hidden="true"></span>
+          </button>
+          <button
+            class="menu-btn"
+            id="menuToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navLinks"
+            aria-label="打开菜单"
+          >
+            <span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- 首屏 -->
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" id="heroEyebrow"></p>
+            <h1 class="hero-name" id="heroName"></h1>
+            <p class="hero-meta" id="heroMeta"></p>
+            <p class="hero-tagline" id="heroTagline"></p>
+            <div class="hero-actions" id="heroActions"></div>
+          </div>
+
+          <div class="hero-figure">
+            <figure class="avatar-card corner" id="avatarCard">
+              <div class="avatar-media" id="avatarMedia"></div>
+              <figcaption class="avatar-bar">
+                <span class="status">
+                  <i class="dot" aria-hidden="true"></i>
+                  <span id="statusText"></span>
+                </span>
+                <span class="grade" id="gradeText"></span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 关于我 -->
+      <section class="section" id="about">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-eyebrow></p>
+          <h2 class="section-title" data-title></h2>
+        </header>
+        <div class="about-grid">
+          <div class="about-text" id="aboutText" data-reveal></div>
+          <dl class="facts" id="aboutFacts" data-reveal></dl>
+        </div>
+      </section>
+
+      <!-- 游戏档案 -->
+      <section class="section" id="games">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-eyebrow></p>
+          <h2 class="section-title" data-title></h2>
+          <p class="section-sub" data-subtitle></p>
+        </header>
+        <div class="games-grid" id="gamesGrid"></div>
+      </section>
+
+      <!-- 高光时刻 -->
+      <section class="section" id="moments">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-eyebrow></p>
+          <h2 class="section-title" data-title></h2>
+          <p class="section-sub" data-subtitle></p>
+        </header>
+        <div class="moments" id="momentsList"></div>
+      </section>
+
+      <!-- 图集 -->
+      <section class="section" id="gallery">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow" data-eyebrow></p>
+          <h2 class="section-title" data-title></h2>
+          <p class="section-sub" data-subtitle></p>
+        </header>
+
+        <div
+          class="carousel"
+          id="carousel"
+          tabindex="0"
+          role="group"
+          aria-roledescription="carousel"
+          aria-label="图集"
+          data-reveal
+        >
+          <div class="carousel-stage" id="carouselStage">
+            <div class="carousel-track" id="carouselTrack"></div>
+            <button class="carousel-btn prev" id="carouselPrev" type="button" aria-label="上一张">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button class="carousel-btn next" id="carouselNext" type="button" aria-label="下一张">
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+          <div class="carousel-foot">
+            <div class="carousel-dots" id="carouselDots"></div>
+            <p class="carousel-count" id="carouselCount" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-name" id="footerName"></p>
+      <p class="footer-note" id="footerText"></p>
+    </footer>
+
+    <a href="#top" class="to-top" id="backTop" aria-label="回到顶部">
+      <span aria-hidden="true">↑</span>
+    </a>
+
+    <noscript>
+      <p class="noscript">这个页面需要启用 JavaScript 才能显示内容。</p>
+    </noscript>
+
+    <!-- 资源缺失时给一句人话，避免只看到空白页 -->
+    <script>
+      window.addEventListener(
+        "error",
+        function (event) {
+          var el = event.target;
+          if (!el || (el.tagName !== "SCRIPT" && el.tagName !== "LINK")) return;
+          var file = el.getAttribute("src") || el.getAttribute("href") || "";
+          if (/data\.js$/.test(file)) return;
+          if (document.getElementById("loadError")) return;
+          var box = document.createElement("div");
+          box.id = "loadError";
+          box.className = "load-error";
+          box.textContent =
+            "页面文件没有加载完整：找不到 " +
+            file +
+            "。请确认 index.html、style.css、script.js、data.js 和 images 文件夹都在同一个目录里。";
+          document.body.appendChild(box);
+        },
+        true
+      );
+    </script>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
