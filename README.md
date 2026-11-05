@@ -102,8 +102,9 @@ git push
 
 推送后一两分钟，<https://lsc-91-69.github.io/zhongtanghengyu/> 会自动更新。
 
-> 注意：这台机器上 `git` 需要走 OpenSSL 的 TLS 后端，
-> 已经写进仓库的 `.git/config`（`http.sslBackend = openssl`），不要删。
+> 这台机器的 git 走 OpenSSL 的 TLS 后端（已执行过
+> `git config --global http.sslBackend openssl`）。换一台机器 push 报
+> `schannel: SEC_E_NO_CREDENTIALS` 时，先执行这条命令再推。
 
 ## 四、一些说明
 
